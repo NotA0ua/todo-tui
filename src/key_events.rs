@@ -13,6 +13,9 @@ fn key_char_n(app: &mut App) {
 fn key_char_d(app: &mut App) {
     if app.todos.len() > 1 {
         app.todos.remove(app.current_todo);
+        if app.current_todo > 0 {
+            app.current_todo -= 1;
+        }
     } else {
         app.todos.push(Todo::default());
         app.todos.remove(0);
